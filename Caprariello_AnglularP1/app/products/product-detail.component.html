@@ -1,0 +1,47 @@
+<div class='panel panel-primary' *ngIf='product'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + product.Product_Name}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            
+            <div class='row'>
+                <div class='col-md-2'></div>
+                <div class='col-md-10'>
+                        <img class='center-block img-responsive' 
+                             [style.width.px]='200' 
+                             [style.margin.px]='2' 
+                             src='./app/assets/images/{{product.ImageName}}'>
+                </div>
+            </div>
+
+            <div class='row'>
+                    <div class='col-md-2'>Name:</div>
+                    <div class='col-md-10'>{{product.Product_Name}}</div>
+            </div>
+
+            <div class='row'>
+                    <div class='col-md-2'>Product Category:</div>
+                    <div class='col-md-10'>{{product.Product_Category}}</div>
+            </div>
+
+            <div class='row'>
+                    <div class='col-md-2'>Product ID:</div>
+                    <div class='col-md-10'>{{product.SKU}}</div>
+            </div>
+
+            <div class='row'>
+                    <div class='col-md-2'>Price:</div>
+                    <div class='col-md-10'>{{product.Price|currency:'USD':true}}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--<div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>-->
+</div>

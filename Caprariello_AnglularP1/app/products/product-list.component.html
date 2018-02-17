@@ -1,0 +1,42 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{ pageTitle }}
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='products && products.length'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Product Category</th>
+                        <th>ProductID</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td>
+                            <a [routerLink]="['/product', product.SKU]">
+                             <img src='./app/assets/images/{{product.ImageName}}'
+                                    width='100px'
+                                    height='100px'>
+                            </a>
+                        </td>
+                        <td>
+                            <a [routerLink]="['/product', product.SKU]">
+                                <h3 class="text-primary">{{ product.Product_Name }} </h3>
+                            </a>
+                        </td>
+                        <!--<td>{{ product.Product_Name }}</td>-->
+                        <td>{{ product.Product_Category }}</td>
+                        <td>{{ product.SKU }}</td>
+                        <td>{{ product.Price | currency:'USD':true }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
